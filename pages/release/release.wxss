@@ -1,1 +1,40 @@
-/* pages/release/release.wxss */
+
+.main .movie-wrap{
+  display: flex;
+  justify-content: space-between;
+  height: 200rpx;
+  padding: 16rpx;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.main .movie-wrap > view{
+  display: inline-block;
+}
+.main .img-wrap image {
+  width: 200rpx;
+  height: 200rpx;
+}
+.main .movie-wrap .describe {
+  padding: 16rpx;
+  font-size: 30rpx;
+  color: #999;
+  flex-grow: 2;
+}
+ .describe .title-rating {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding-bottom: 16rpx;
+} 
+.describe .title-rating .name {
+  width: 400rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.describe .title-rating .rating {
+  color: red;
+}
+.describe .directors {
+  padding-top: 16rpx;
+}
