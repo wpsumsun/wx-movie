@@ -1,0 +1,13 @@
+<!--pages/detail/detail.wxml-->
+<loading hidden="{{ !isLoading }}"></loading>
+<scroll-view class="page">
+  <image class="cover" src="{{ detail.images.large }}"></image>
+  <view class="info">{{ detail.title }}</view>
+  <view class="info">国家：{{ detail.countries }}</view>
+  <view class="info">年代：{{ detail.year }}</view>
+  <view class="info">类型：{{ detail.genres }}</view>
+  <view class="info">评分：{{ detail.rating.average }}</view>
+  <block wx:for="{{ detail.directors }}">
+    <text class="info">导演：{{ item.name }}</text>
+  </block>
+</scroll-view>

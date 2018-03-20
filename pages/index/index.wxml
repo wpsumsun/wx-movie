@@ -5,19 +5,23 @@
   电影TOP50
 </view>
 <scroll-view class="main" scroll-y bindscrolltolower="loadMore">
-  <view class="movie-wrap" wx:for="{{ movies }}" wx:key="{{ item.id }}"> 
-    <view class="img-wrap">
-      <image src="{{ item.images.large }}"></image>
-    </view>
-    <view class="describe">
-      <view class="title-rating">
-        <text class="name">{{ item.title }}</text>
-        <text class="rating">{{ item.rating.average }}</text>
+
+  <navigator url="../detail/detail?id={{ item.id }}" wx:for="{{ movies }}" wx:key="{{ item.id }}">
+    <view class="movie-wrap">
+      <view class="img-wrap">
+        <image src="{{ item.images.large }}"></image>
       </view>
-      <text class="tags">{{ item.genres }}</text>
-      <view class="directors">
-        <text class="actor" wx:for="{{ item.directors }}" wx:for-item="director">{{ director.name }}</text>
+      <view class="describe">
+        <view class="title-rating">
+          <text class="name">{{ item.title }}</text>
+          <text class="rating">{{ item.rating.average }}</text>
+        </view>
+        <text class="tags">{{ item.genres }}</text>
+        <view class="directors">
+          <text class="actor" wx:for="{{ item.directors }}" wx:for-item="director">{{ director.name }}</text>
+        </view>
       </view>
     </view>
-  </view>
+  </navigator>
+
 </scroll-view>

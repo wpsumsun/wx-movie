@@ -16,7 +16,6 @@ Page({
   },
   onLoad: function () {
     this.getMovesRank()
-    this.getHeight()
   },
   getMovesRank() {
     this.data.isDone = false
