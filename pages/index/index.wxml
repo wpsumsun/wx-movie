@@ -1,13 +1,23 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<loading hidden="{{ !isLoading }}">
+  加载中...
+</loading>
+<view class="title">
+  电影TOP250
 </view>
+<scroll-view class="main" scroll-y>
+  <view class="movie-wrap" wx:for="{{ movies }}" wx:key="{{ item.id }}"> 
+    <view class="img-wrap">
+      <image src="{{ item.images.large }}"></image>
+    </view>
+    <view class="describe">
+      <view class="title-rating">
+        <text class="name">{{ item.title }}</text>
+        <text class="rating">{{ item.rating.average }}</text>
+      </view>
+      <text class="tags">{{ item.genres }}</text>
+      <view class="directors">
+        <text class="actor" wx:for="{{ item.directors }}" wx:for-item="director">{{ director.name }}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

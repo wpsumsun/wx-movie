@@ -1,12 +1,44 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/release/release",
+    "pages/search/search",
+    "pages/position/position"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+  "tabBar": {
+    "list": [
+      {
+        "text": "推荐电影",
+        "pagePath": "pages/index/index",
+        "iconPath": "./images/featured.png",
+        "selectedIconPath": "./images/featured-actived.png"
+      },
+      {
+        "text": "正在上映",
+        "pagePath": "pages/release/release",
+        "iconPath": "./images/usbox.png",
+        "selectedIconPath": "./images/usbox-actived.png"
+      },
+      {
+        "text": "搜索",
+        "pagePath": "pages/search/search",
+        "iconPath": "./images/search.png",
+        "selectedIconPath": "./images/search-actived.png"
+      },
+      {
+        "text": "定位",
+        "pagePath": "pages/position/position",
+        "iconPath": "./images/profile.png",
+        "selectedIconPath": "./images/profile-actived.png"
+      }
+    ],
+    "color": "#999",
+    "selectedColor": "#333"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3db",
+    "navigationBarTitleText": "推荐电影",
+    "navigationBarTextStyle": "#fff"
   }
 }
