@@ -2,9 +2,9 @@
   加载中...
 </loading>
 <view class="title">
-  电影TOP250
+  电影TOP50
 </view>
-<scroll-view class="main" scroll-y>
+<scroll-view class="main" scroll-y bindscrolltolower="loadMore">
   <view class="movie-wrap" wx:for="{{ movies }}" wx:key="{{ item.id }}"> 
     <view class="img-wrap">
       <image src="{{ item.images.large }}"></image>
