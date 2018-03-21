@@ -1,2 +1,4 @@
-<!--pages/position/position.wxml-->
-<text>pages/position/position.wxml</text>
+<map 
+ latitude="{{ location.latitude }}"
+ longitude="{{ location.longitude }}">
+</map>

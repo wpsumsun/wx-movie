@@ -76,9 +76,26 @@ function search(url, data) {
   })
 }
 
+function getLocation() {
+  return new Promise((resolve, reject) => {
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+        resolve({ latitude, longitude})
+      },
+      fail() {
+        reject({ status: 'error', msg: '获取地理位置失败' })
+      }
+    })
+  })
+}
+
 module.exports = {
     getMoviesRank,
     getMoviesReleasing,
     getMovieDetail,
-    search
+    search,
+    getLocation
 }
