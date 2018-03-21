@@ -1,4 +1,5 @@
 <map 
+ markers="{{ markers }}"
  latitude="{{ location.latitude }}"
  longitude="{{ location.longitude }}">
 </map>
