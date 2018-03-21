@@ -1,2 +1,29 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<loading hidden="{{ !isLoading }}">
+  加载中...
+</loading>
+<view class="search">
+  <input type="text" placeholder="请输入电影名" focus confirm-type="search" bindblur="search"/>
+  <icon type="search" color="#fff" size="20"/>
+</view>
+<scroll-view class="main" scroll-y bindscrolltolower="loadMore" wx:if="{{ movies.length > 0 }}">
+  <navigator url="../detail/detail?id={{ item.id }}" wx:for="{{ movies }}" wx:key="{{ item.id }}">
+    <view class="movie-wrap">
+      <view class="img-wrap">
+        <image src="{{ item.images.large }}"></image>
+      </view>
+      <view class="describe">
+        <view class="title-rating">
+          <text class="name">{{ item.title }}</text>
+          <text class="rating">{{ item.rating.average }}</text>
+        </view>
+        <text class="tags">{{ item.genres }}</text>
+        <view class="directors">
+          <text class="actor" wx:for="{{ item.directors }}" wx:for-item="director">{{ director.name }}</text>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</scroll-view>
+<view wx:if="{{ movies.length === 0 && !isFirst }}">
+  抱歉，没有查询到
+</view>

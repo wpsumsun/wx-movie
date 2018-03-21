@@ -55,10 +55,30 @@ function getMovieDetail(url, data) {
       }
     })
   })
+} 
+
+function search(url, data) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${host}${url}`,
+      data,
+      success(res) {
+        if (res.data.subjects) {
+          resolve(res.data)
+        } else {
+          reject({ status: 'error', msg: '搜索失败' })
+        }
+      },
+      fail() {
+        reject({ status: 'error', msg: '搜索失败' })
+      }
+    })
+  })
 }
 
 module.exports = {
     getMoviesRank,
     getMoviesReleasing,
-    getMovieDetail
+    getMovieDetail,
+    search
 }
